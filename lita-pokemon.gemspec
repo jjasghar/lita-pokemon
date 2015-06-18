@@ -2,11 +2,11 @@ Gem::Specification.new do |spec|
   spec.name          = "lita-pokemon"
   spec.version       = "0.1.0"
   spec.authors       = ["JJ Asghar"]
-  spec.email         = ["jj@getchef.com"]
-  spec.description   = "TODO: Add a description"
-  spec.summary       = "TODO: Add a summary"
-  spec.homepage      = "TODO: Add a homepage"
-  spec.license       = "TODO: Add a license"
+  spec.email         = ["jjasghar@gmail.com"]
+  spec.description   = "This is a way to search for different pokemon quickly and easily."
+  spec.summary       = "This is a way to search for different pokemon quickly and easily."
+  spec.homepage      = "http://github.com/jjasghar/lita-pokemon"
+  spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
   spec.files         = `git ls-files`.split($/)
