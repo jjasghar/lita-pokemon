@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/jjasghar/lita-pokemon.png?branch=master)](https://travis-ci.org/jjasghar/lita-pokemon)
 [![Coverage Status](https://coveralls.io/repos/jjasghar/lita-pokemon/badge.png)](https://coveralls.io/r/jjasghar/lita-pokemon)
 
-TODO: Add a description of the plugin.
+This is a way to search for different pokemon quickly and easily.
 
 ## Installation
 
@@ -15,8 +15,17 @@ gem "lita-pokemon"
 
 ## Configuration
 
-TODO: Describe any configuration attributes the plugin exposes.
+None at the moment.
 
 ## Usage
 
-TODO: Describe the plugin's features and how to use them.
+Nice and simple:
+
+```
+user1> throw a pokeball!
+bot> http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/25.png
+bot> I choose you Pikachu!
+user1> pokemon 44
+bot> http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/44.png
+bot> I choose you Gloom!
+```
