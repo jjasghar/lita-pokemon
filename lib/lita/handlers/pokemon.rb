@@ -5,12 +5,12 @@ module Lita
       route(/^pokeball$/i, :throw, command: false, help: { "pokeball" => "Gets a random pokemon and names it.."} )
       route(/^pokemon\s+(.+)$/i, :search, command: false, help: { "pokemon <number>" => "Gets a specific pokemon via the National pokedex and gives some stats"} )
 
-      @pokemon_url = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/'
+      @@pokemon_url = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/'
 
       def throw(request)
         random_number = rand(001..778)
         name = get_pokemon(random_number)
-        request.reply @pokemon_url + "#{random_number}.png"
+        request.reply @@pokemon_url + "#{random_number}.png"
         request.reply "I choose you #{name}!"
       end
 
@@ -20,7 +20,7 @@ module Lita
           request.reply "You've picked a too high of a pokedex number!"
         else
           name = get_pokemon(pokemon_number)
-          request.reply @pokemon_url + "#{pokemon_number}.png"
+          request.reply @@pokemon_url + "#{pokemon_number}.png"
           request.reply "I choose you #{name}!"
         end
       end
