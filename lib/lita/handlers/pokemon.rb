@@ -10,6 +10,7 @@ module Lita
       def throw(request)
         random_number = rand(001..778)
         name = get_pokemon(random_number)
+        random_number = "%03d" % random_number.to_i
         request.reply @@pokemon_url + "#{random_number}.png"
         request.reply "I choose you #{name}!"
       end
@@ -20,6 +21,7 @@ module Lita
           request.reply "You've picked a too high of a pokedex number!"
         else
           name = get_pokemon(pokemon_number)
+          pokemon_number = "%03d" % pokemon_number.to_i
           request.reply @@pokemon_url + "#{pokemon_number}.png"
           request.reply "I choose you #{name}!"
         end
