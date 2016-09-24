@@ -2,13 +2,16 @@ module Lita
   module Handlers
     class Pokemon < Handler
 
-      route(/^throw a pokeball!$/i, :throw, command: false, help: { "throw a pokeball!" => "Gets a random pokemon and names it.."} )
+      route(/^pokeball$/i, :throw, command: false, help: { "pokeball" => "Gets a random pokemon and names it.."} )
       route(/^pokemon\s+(.+)$/i, :search, command: false, help: { "pokemon <number>" => "Gets a specific pokemon via the National pokedex and gives some stats"} )
+
+      @@pokemon_url = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/'
 
       def throw(request)
         random_number = rand(001..778)
         name = get_pokemon(random_number)
-        request.reply "http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/#{random_number}.png"
+        random_number = "%03d" % random_number.to_i
+        request.reply @@pokemon_url + "#{random_number}.png"
         request.reply "I choose you #{name}!"
       end
 
@@ -18,7 +21,8 @@ module Lita
           request.reply "You've picked a too high of a pokedex number!"
         else
           name = get_pokemon(pokemon_number)
-          request.reply "http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/#{pokemon_number}.png"
+          pokemon_number = "%03d" % pokemon_number.to_i
+          request.reply @@pokemon_url + "#{pokemon_number}.png"
           request.reply "I choose you #{name}!"
         end
       end
