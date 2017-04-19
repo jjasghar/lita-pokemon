@@ -22,10 +22,10 @@ None at the moment.
 Nice and simple:
 
 ```
-user1> throw a pokeball!
-bot> http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/25.png
+user1> pokeball
+bot> http://assets.pokemon.com/assets/cms2/img/pokedex/full/25.png
 bot> I choose you Pikachu!
 user1> pokemon 44
-bot> http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/44.png
+bot> http://assets.pokemon.com/assets/cms2/img/pokedex/full/44.png
 bot> I choose you Gloom!
 ```
